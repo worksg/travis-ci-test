@@ -1,5 +1,6 @@
 # use the latest ubuntu environment (18.04) available on travis
-dist: xenial
+# https://docs.travis-ci.com/user/reference/overview/
+dist: bionic
 
 language: go
 
@@ -41,4 +42,4 @@ before_script:
 script:
   - echo "script"
   - golangci-lint run       # run a bunch of code checkers/linters in parallel
-  - go test -v -race ./...  # Run all the tests with the race detector enabled
+  - go run main.go
